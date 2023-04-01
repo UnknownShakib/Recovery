@@ -2,7 +2,7 @@
 
 # Device
 export FOX_BRANCH="fox_12.1"
-export DT_LINK="https://github.com/z3zens/twrp_device_asus_X01BD.git -b ofrp-12.1-4.19"
+export DT_LINK="https://github.com/z3zens/twrp_device_asus_X01BD.git -b ofrp-4.19"
 
 export DEVICE="X01BD"
 export OEM="asus"
