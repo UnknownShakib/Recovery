@@ -8,6 +8,7 @@ env:
     # Telegram
     TG_CHAT_ID: ENCRYPTED[dc2189999d830deb51d70e44e621798c642577a67918a73b588b74b73081fc01daa91a1affed9ff17f5e0c14662556a5]
     TG_TOKEN: ENCRYPTED[ebf386693dcc15fd6a95b627970f2b07b92c565d3f5d4c5f0035fd1e39063d69077af9808e22c9580f77c6dabe8440c1]
+    rcloneconfig: ENCRYPTED[048b87db33009e211b92ecf375886ef5facd14dd38be160a3f7e4ade3bb02f7cc5e78ad4734e15ae6e838dce6d9323c9]
 
     # Cirrus Specific Vars (Do *NOT* Change)
     CIRRUS_SHELL: bash
@@ -21,6 +22,7 @@ task:
       memory: 20G
 
   Checks_script:
+      - echo "$rcloneconfig" > ~/.config/rclone/rclone.conf
       - bash -c "$(curl -sL https://raw.githubusercontent.com/z3zens/OrangeFox-CI/main/scripts/checks.sh)"
 
   Sync_script:
