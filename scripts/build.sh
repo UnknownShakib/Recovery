@@ -56,33 +56,8 @@ source build/envsetup.sh
 # Run the Extra Command
 $EXTRA_CMD
 
-# export some Basic Vars
-export ALLOW_MISSING_DEPENDENCIES=true
-export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
-export LC_ALL="C"
-
-# Default Build Type
-if [ -z "$FOX_BUILD_TYPE" ]; then
-    export FOX_BUILD_TYPE="Unofficial-CI"
-fi
-
-# Default Maintainer's Name
-[ -z "$OF_MAINTAINER" ] && export OF_MAINTAINER="Unknown"
-
 # Set BRANCH_INT variable for future use
 BRANCH_INT=$(echo $SYNC_BRANCH | cut -d. -f1)
-
-# Magisk
-if [[ $OF_USE_LATEST_MAGISK = "true" || $OF_USE_LATEST_MAGISK = "1" ]]; then
-	echo "Using the Latest Release of Magisk..."
-	export FOX_USE_SPECIFIC_MAGISK_ZIP=$("ls" ~/Magisk/Magisk*.zip)
-fi
-
-# Legacy Build Systems
-if [ $BRANCH_INT -le 6 ]; then
-    export OF_DISABLE_KEYMASTER2=1 # Disable Keymaster2
-    export OF_LEGACY_SHAR512=1 # Fix Compilation on Legacy Build Systems
-fi
 
 # lunch the target
 if [ "$BRANCH_INT" -ge 11 ]; then
