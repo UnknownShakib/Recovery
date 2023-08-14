@@ -2,16 +2,16 @@
 
 # Device
 export FOX_BRANCH="fox_12.1"
-export DT_LINK="https://github.com/z3zens/twrp_device_asus_X01BD.git -b ofrp-4.19"
+export DT_LINK="https://github.com/HuaJi-QWQ/device_sky_of.git -b main"
 
-export DEVICE="X01BD"
-export OEM="asus"
+export DEVICE="sky"
+export OEM="xiaomi"
 
 # Build Target
 ## "recoveryimage" - for A-Only Devices without using Vendor Boot
 ## "bootimage" - for A/B devices without recovery partition (and without vendor boot)
 ## "vendorbootimage" - for devices Using vendor boot for the recovery ramdisk (Usually for devices shipped with Android 12 or higher)
-export TARGET="recoveryimage"
+export TARGET="vendorbootimage"
 
 export OUTPUT="OrangeFox*.zip"
 
@@ -22,7 +22,7 @@ DEPS=(
 )
 
 # Extra Command
-export EXTRA_CMD="export OF_MAINTAINER=rhapson"
+export EXTRA_CMD="export OF_MAINTAINER=unknown"
 
 # Not Recommended to Change
 export SYNC_PATH="$HOME/work" # Full (absolute) path.
